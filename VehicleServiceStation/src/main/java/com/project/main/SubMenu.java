@@ -15,7 +15,7 @@ public class SubMenu {
 		System.out.println("3. Display Specific Customer Details ");
 		System.out.println("4. Edit Customer ");
 		System.out.println("5. Delete Customer");
-		System.out.println("Enter your choice ...!!!");
+		System.out.print("Enter your choice =  ");
 		int choice=new Scanner(System.in).nextInt();
 		if (choice <0 || choice > 6)
 			return EcustomerMenu.values()[6];
@@ -65,7 +65,7 @@ public class SubMenu {
 		System.out.println("3. Display Customer Vehicles ");
 		System.out.println("4. Edit Vehicle ");
 		System.out.println("5. Delete Vehicle ");
-		System.out.println("Enter your Choice ....!!");
+		System.out.print("Enter your Choice = ");
 		
 		int choice= new Scanner(System.in).nextInt();
 		if(choice<0 ||choice >6)
@@ -112,7 +112,7 @@ public class SubMenu {
 		System.out.println("2. Process Request");
 		System.out.println("3. Prepare and Display Bill");
 		System.out.println("4. Get Payment Form Customer");
-		System.out.println("Enter your Choice ....!!!");
+		System.out.print("Enter your Choice =  ");
 		int choice= new Scanner(System.in).nextInt();
 		if(choice<0 ||choice >5)
 			return EserviceMenu.values()[5];
@@ -159,7 +159,7 @@ public class SubMenu {
 		System.out.println("3. Maintenance");
 		System.out.println("4. Repairing");
 		System.out.println("5. Oil/Additive Change/Add");
-		System.out.println("Enter Your Choice...!!! ");
+		System.out.print("Enter Your Choice = ");
 		int choice= new Scanner(System.in).nextInt();
 		if(choice<0 ||choice>6)
 			return EprocessRequest.values()[6];
@@ -193,21 +193,28 @@ public class SubMenu {
 		}
 	}
 	
+	enum EnewServiceMenu{
+		BACK,CAN_CREATE_NEW,DEFAULT
+	}
 	
-	
-	public static int newServiceMenu() {
-		System.out.println("0. back");
+	public static EnewServiceMenu newServiceMenu() {
+		System.out.println("0. Back");
 		System.out.println("1. Service center can create a new service for the selected customer vehicle");
-		return new Scanner(System.in).nextInt();
+		int choice = new Scanner(System.in).nextInt();
+		if(choice<0 || choice >2)
+			return EnewServiceMenu.values()[2];
+		else 
+			return EnewServiceMenu.values()[choice];
+					
 	}
 	
 	//newService
 	
 	public static void newServiceMain() {
-		int choice;
-		while((choice=newServiceMenu())!=0) {
+		EnewServiceMenu choice;
+		while((choice=newServiceMenu())!=EnewServiceMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case CAN_CREATE_NEW :
 				System.out.println("1. Service center can create a new service for the selected customer vehicle");
 				break;
 
@@ -220,16 +227,25 @@ public class SubMenu {
 	
 	//existingService
 	
-	public static int existingServiceMenu() {
+	enum EexistingServiceMenu{
+		BACK,SELECT_EXISTING_SERVICE,DEFAULT
+	}
+	public static EexistingServiceMenu existingServiceMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. If service is already created select the existing service");
-		return new Scanner(System.in).nextInt();
+		int choice= new Scanner(System.in).nextInt();
+		if(choice <0 ||  choice >2 )
+			return EexistingServiceMenu.values()[2];
+		else 
+			return EexistingServiceMenu.values()[choice];
+		
+		
 	}
 	public static void existingServiceMain() {
-		int choice ;
-		while ((choice =existingServiceMenu())!=0) {
+		EexistingServiceMenu choice ;
+		while ((choice =existingServiceMenu())!=EexistingServiceMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case SELECT_EXISTING_SERVICE:
 				System.out.println("1. If service is already created select the existing service");
 
 				break;
