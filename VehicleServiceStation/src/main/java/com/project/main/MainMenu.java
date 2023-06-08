@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 	enum EmainMenu{
-		EXIT,CUSTOMER,VEHICLE,SERVICE,PART,TODAY,GIVEN
+		EXIT,CUSTOMER,VEHICLE,SERVICE,PART,TODAY_BUSINESS,GIVEN_BUSINESS,DEFAULT
 	}
 	public static EmainMenu mainMenuOption() {
 		
@@ -15,9 +15,13 @@ public class MainMenu {
 		System.out.println("4. Parts");
 		System.out.println("5. Today's Business");
 		System.out.println("6. Given Date's Business");
-		System.out.println("Enter your choice ...!!!");
+		System.out.print("Enter your choice = ");
 		int choice=new Scanner(System.in).nextInt();
+		if (choice <0 || choice >7) 
+			return EmainMenu.values()[7];	
+		else
 		return EmainMenu.values()[choice];
+		
 	}
 	public static void main(String[] args) {
 		EmainMenu choice ;
@@ -35,10 +39,10 @@ public class MainMenu {
 			case PART:
 				SubMenu.partMain();
 				break;
-			case TODAY:
+			case TODAY_BUSINESS:
 				SubMenu.todayBusinessMain();
 				break;
-			case GIVEN:
+			case GIVEN_BUSINESS:
 				SubMenu.givenBusinessMain();
 				break;
 			
