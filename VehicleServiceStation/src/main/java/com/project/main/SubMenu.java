@@ -260,17 +260,24 @@ public class SubMenu {
 	}
 	
 	// maintenance 
+	enum  EmaintenanceMenu{
+		BACK,MENTIONED_IN_DESCRP,DEFAULT
+	}
 	
-	public static int maintenanceMenu() {
+	public static EmaintenanceMenu maintenanceMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. As per the requirements mentioned in above description.");
-		return new Scanner(System.in).nextInt();
+		int choice= new Scanner(System.in).nextInt();
+		if(choice<0 || choice >2)
+			return EmaintenanceMenu.values()[2];
+		else
+			return EmaintenanceMenu.values()[choice];
 	}
 	public static void maintenanceMain() {
-		int choice ;
-		while ((choice =maintenanceMenu())!=0) {
+		EmaintenanceMenu choice ;
+		while ((choice =maintenanceMenu())!=EmaintenanceMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case MENTIONED_IN_DESCRP:
 				System.out.println(" As per the requirements mentioned in above description.");
 
 				break;
@@ -310,10 +317,17 @@ public class SubMenu {
 	}
 	
 	//oil/addictive//add
-	public static int OilMenu() {
+	enum EoilMenu{
+		BACK,MENTIONED_IN_DESCRP,DEFAULT
+	}
+	public static EoilMenu OilMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. As per the requirements mentioned in above description.");
-		return new Scanner(System.in).nextInt();
+		it choice =new Scanner(System.in).nextInt();
+		if(choice<0 || choice >2)
+			return EoilMenu.values()[2];
+		else
+			return EoilMenu.values()[choice];
 	}
 	public static void OilMain() {
 		int choice ;
