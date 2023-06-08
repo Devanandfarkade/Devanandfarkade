@@ -17,8 +17,8 @@ public class SubMenu {
 		System.out.println("5. Delete Customer");
 		System.out.println("Enter your choice ...!!!");
 		int choice=new Scanner(System.in).nextInt();
-		if (choice <0 || choice > 7)
-			return EcustomerMenu.values()[7];
+		if (choice <0 || choice > 6)
+			return EcustomerMenu.values()[6];
 		else
 			return EcustomerMenu.values()[choice];
 				
@@ -68,8 +68,8 @@ public class SubMenu {
 		System.out.println("Enter your Choice ....!!");
 		
 		int choice= new Scanner(System.in).nextInt();
-		if(choice<0 ||choice >7)
-			return EvehicleMenu.values()[7];
+		if(choice<0 ||choice >6)
+			return EvehicleMenu.values()[6];
 		else
 			return EvehicleMenu.values()[choice];
 	}
@@ -102,33 +102,40 @@ public class SubMenu {
 		}
 	}
 	
+	enum EserviceMenu{
+		BACK,SELECT_CUSTOMER_VEHICLE,PROCESS_REQ,PREPARED_DISPLAY_BILL,PAYMENT,DEFAULT
+	}
 	
-	public static int serviceMenu() {
+	public static EserviceMenu serviceMenu() {
 		System.out.println("0 .back");
 		System.out.println("1. Select Customer Vehicle");
 		System.out.println("2. Process Request");
 		System.out.println("3. Prepare and Display Bill");
 		System.out.println("4. Get Payment Form Customer");
 		System.out.println("Enter your Choice ....!!!");
-		return new Scanner(System.in).nextInt();
+		int choice= new Scanner(System.in).nextInt();
+		if(choice<0 ||choice >5)
+			return EserviceMenu.values()[5];
+		else
+			return EserviceMenu.values()[choice];
 	}
 	public static void serviceMain() {
-		int choice;
-		while ((choice =serviceMenu())!=0) {
+		EserviceMenu choice;
+		while ((choice =serviceMenu())!=EserviceMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case SELECT_CUSTOMER_VEHICLE:
 				System.out.println("1. Select Customer Vehicle");
 
 				break;
-			case 2:
+			case PROCESS_REQ:
 				System.out.println("2. Process Request");
 
 				break;
-			case 3:
+			case PREPARED_DISPLAY_BILL:
 				System.out.println("3. Prepare and Display Bill");
 
 				break;
-			case 4:
+			case PAYMENT:
 				System.out.println("4. Get Payment Form Customer");
 
 				break;
@@ -142,7 +149,10 @@ public class SubMenu {
 	
 	//service request submenus created from here
 	
-	public static int processRequest() {
+	enum EprocessRequest{
+		BACK,NEW_SERVICE,EXISTING_SERVICE,MAINTENANCE,REPAIRING,OIL_DD,DEFAULT
+	}
+	public static EprocessRequest processRequest() {
 		System.out.println("0. Back");
 		System.out.println("1. New Service");
 		System.out.println("2. Existing Service ");
@@ -150,25 +160,30 @@ public class SubMenu {
 		System.out.println("4. Repairing");
 		System.out.println("5. Oil/Additive Change/Add");
 		System.out.println("Enter Your Choice...!!! ");
-		return new Scanner(System.in).nextInt();
+		int choice= new Scanner(System.in).nextInt();
+		if(choice<0 ||choice>6)
+			return EprocessRequest.values()[6];
+		else
+			return EprocessRequest.values()[choice];
+					
 	}
 	public static void processMain() {
-		int choice;
-		while((choice=processRequest())!=0) {
+		EprocessRequest choice;
+		while((choice=processRequest())!=EprocessRequest.BACK) {
 			switch (choice) {
-			case 1:
+			case NEW_SERVICE:
 				newServiceMain();
 				break;
-			case 2:
+			case EXISTING_SERVICE:
 				existingServiceMain();
 				break;
-			case 3:
+			case MAINTENANCE:
 				maintenanceMain();
 				break;
-			case 4:
+			case REPAIRING:
 				repairingMain();
 				break;
-			case 5:
+			case OIL_DD:
 				OilMain();
 				break;
 			default:
