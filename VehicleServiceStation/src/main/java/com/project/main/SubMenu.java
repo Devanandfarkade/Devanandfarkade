@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 public class SubMenu {
 
-	public static int customerMenu() {
+	enum EcustomerMenu {
+		BACK,ADD_CUSTOMER,DISPLAY_ALL_CUSTOMER,DISPLAY_SPECIFIC,EDIT,DELETE,DEFAULT
+	}
+	
+	public static EcustomerMenu customerMenu() {
 		System.out.println("0. Back ");
 		System.out.println("1. Add customer");
 		System.out.println("2. Display All Customers");
@@ -12,29 +16,34 @@ public class SubMenu {
 		System.out.println("4. Edit Customer ");
 		System.out.println("5. Delete Customer");
 		System.out.println("Enter your choice ...!!!");
-		return new Scanner(System.in).nextInt();
+		int choice=new Scanner(System.in).nextInt();
+		if (choice <0 || choice > 7)
+			return EcustomerMenu.values()[7];
+		else
+			return EcustomerMenu.values()[choice];
+				
 	}
 	public static void customerMain() {
-		int choice;
-		while((choice =customerMenu())!=0) {
+		EcustomerMenu choice;
+		while((choice =customerMenu())!=EcustomerMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case ADD_CUSTOMER:
 				System.out.println("1. Add customer");
 
 				break;
-			case 2:
+			case DISPLAY_ALL_CUSTOMER:
 				System.out.println("2. Display All Customers");
 
 				break;
-			case 3:
+			case DISPLAY_SPECIFIC:
 				System.out.println("3. Display Specific Customer Details ");
 
 				break;
-			case 4:
+			case EDIT:
 				System.out.println("4. Edit Customer ");
 
 				break;
-			case 5:
+			case DELETE:
 				System.out.println("5. Delete Customer");
 
 				break;
@@ -45,7 +54,11 @@ public class SubMenu {
 			}
 		}
 	}
-	public static int vehicleMenu() {
+	
+	enum EvehicleMenu{
+		BACK,ADD_VEHICLE,DIPLAY_ALL_VEHICLES,DIPLAY_CUSTOMER_VEHICLES,EDIT,DELETE,DEFAULT
+	}
+	public static EvehicleMenu vehicleMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. Add Vehicle ");
 		System.out.println("2. Display All Vehicles ");
@@ -53,32 +66,34 @@ public class SubMenu {
 		System.out.println("4. Edit Vehicle ");
 		System.out.println("5. Delete Vehicle ");
 		System.out.println("Enter your Choice ....!!");
-		return new Scanner(System.in).nextInt();
+		
+		int choice= new Scanner(System.in).nextInt();
+		if(choice<0 ||choice >7)
+			return EvehicleMenu.values()[7];
+		else
+			return EvehicleMenu.values()[choice];
 	}
 	public static void vehicleMain() {
-		int choice;
-		while ((choice =vehicleMenu())!=0) {
+		EvehicleMenu choice;
+		while ((choice =vehicleMenu())!=EvehicleMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case ADD_VEHICLE:
 				System.out.println("1. Add Vehicle ");
 				break;
-			case 2:
+			case DIPLAY_ALL_VEHICLES:
 				System.out.println("2. Display All Vehicles ");
 				break;
-			case 3:
+			case DIPLAY_CUSTOMER_VEHICLES:
 				System.out.println("3. Display Customer Vehicles ");
 		
 				break;
-			case 4:
+			case EDIT:
 				System.out.println("4. Edit Vehicle ");
 
 				break;
-			case 5:
+			case DELETE:
 				System.out.println("5. Delete Vehicle ");
 
-				break;
-			case 6:
-				
 				break;
 			default:
 				System.out.println("Wrong choice ...:(");
@@ -86,6 +101,8 @@ public class SubMenu {
 			}
 		}
 	}
+	
+	
 	public static int serviceMenu() {
 		System.out.println("0 .back");
 		System.out.println("1. Select Customer Vehicle");
