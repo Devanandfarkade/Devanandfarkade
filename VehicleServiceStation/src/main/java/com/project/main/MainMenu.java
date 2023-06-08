@@ -3,7 +3,11 @@ package com.project.main;
 import java.util.Scanner;
 
 public class MainMenu {
-	public static int mainMenuOption() {
+	enum EmainMenu{
+		EXIT,CUSTOMER,VEHICLE,SERVICE,PART,TODAY,GIVEN
+	}
+	public static EmainMenu mainMenuOption() {
+		
 		System.out.println("0. Exit");
 		System.out.println("1. Customer");
 		System.out.println("2. Vehicle");
@@ -12,28 +16,29 @@ public class MainMenu {
 		System.out.println("5. Today's Business");
 		System.out.println("6. Given Date's Business");
 		System.out.println("Enter your choice ...!!!");
-		return new Scanner(System.in).nextInt();
+		int choice=new Scanner(System.in).nextInt();
+		return EmainMenu.values()[choice];
 	}
 	public static void main(String[] args) {
-		int choice ;
-		while ((choice =mainMenuOption())!=0) {
+		EmainMenu choice ;
+		while ((choice =mainMenuOption())!=EmainMenu.EXIT) {
 			switch (choice) {
-			case 1:
+			case CUSTOMER:
 				SubMenu.customerMain();
 				break;
-			case 2:
+			case VEHICLE:
 				SubMenu.vehicleMain();
 				break;
-			case 3:
+			case SERVICE:
 				SubMenu.serviceMain();
 				break;
-			case 4:
+			case PART:
 				SubMenu.partMain();
 				break;
-			case 5:
+			case TODAY:
 				SubMenu.todayBusinessMain();
 				break;
-			case 6:
+			case GIVEN:
 				SubMenu.givenBusinessMain();
 				break;
 			

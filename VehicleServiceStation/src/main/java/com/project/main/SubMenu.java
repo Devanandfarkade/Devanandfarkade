@@ -123,7 +123,8 @@ public class SubMenu {
 		}
 	}
 	
-	//service requwst submenus created from here
+	//service request submenus created from here
+	
 	public static int processRequest() {
 		System.out.println("0. Back");
 		System.out.println("1. New Service");
