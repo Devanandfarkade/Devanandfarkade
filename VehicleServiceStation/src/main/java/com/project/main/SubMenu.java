@@ -192,6 +192,9 @@ public class SubMenu {
 			}
 		}
 	}
+	
+	
+	
 	public static int newServiceMenu() {
 		System.out.println("0. back");
 		System.out.println("1. Service center can create a new service for the selected customer vehicle");
@@ -313,34 +316,42 @@ public class SubMenu {
 			
 		}
 	}
-	public static int partMenu() {
+	
+	enum EpartMenu{
+		BACK,ADD_PART,DISPLAY_ALL_PARTS,EDIT_PARTS_PRICE,DELETE_PART,DEFAULT
+	}
+	public static EpartMenu partMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. Add Part ");
 		System.out.println("2. Display All Parts");
 		System.out.println("3. Edit Part Price");
 		System.out.println("4. Delete Part");
 		System.out.println("Enter Your Choice.....!!!");
-		return new Scanner(System.in).nextInt();
+		int choice= new Scanner(System.in).nextInt();
+		if(choice<0 || choice>5)
+			return EpartMenu.values()[5];
+		else
+			return EpartMenu.values()[choice];
 	}
 	public static void partMain() {
-		int choice;
-		while((choice=partMenu())!=0) {
+		EpartMenu choice;
+		while((choice=partMenu())!=EpartMenu.BACK) {
 			switch (choice) {
-			case 1:
+			case ADD_PART:
 				System.out.println("1. Add Part ");
 
 				break;
-			case 2:
+			case DISPLAY_ALL_PARTS:
 				System.out.println("2. Display All Parts");
 
 				break;
 				
-			case 3:
+			case EDIT_PARTS_PRICE:
 				System.out.println("3. Edit Part Price");
 
 					break;
 					
-			case 4:
+			case DELETE_PART:
 				System.out.println("4. Delete Part");
 
 						break;
