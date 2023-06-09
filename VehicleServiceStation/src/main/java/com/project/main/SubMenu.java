@@ -8,6 +8,41 @@ public class SubMenu {
 		BACK,ADD_CUSTOMER,DISPLAY_ALL_CUSTOMER,DISPLAY_SPECIFIC,EDIT,DELETE,DEFAULT
 	}
 	
+	enum EvehicleMenu{
+		BACK,ADD_VEHICLE,DIPLAY_ALL_VEHICLES,DIPLAY_CUSTOMER_VEHICLES,EDIT,DELETE,DEFAULT
+	}
+	
+	enum EserviceMenu{
+		BACK,SELECT_CUSTOMER_VEHICLE,PROCESS_REQ,PREPARED_DISPLAY_BILL,PAYMENT,DEFAULT
+	}
+	
+	enum EprocessRequest{
+		BACK,NEW_SERVICE,EXISTING_SERVICE,MAINTENANCE,REPAIRING,OIL_DD,DEFAULT
+	}
+	
+	//SubMenus from process
+			//new service menu
+	enum EnewServiceMenu{
+		BACK,CAN_CREATE_NEW,DEFAULT
+	}
+			//existing service menu
+	enum EexistingServiceMenu{
+		BACK,SELECT_EXISTING_SERVICE,DEFAULT
+	}
+			//maintenance Menu
+	enum  EmaintenanceMenu{
+		BACK,MENTIONED_IN_DESCRP,DEFAULT
+	}
+			//Oil/Additive Change/Add
+	enum EoilMenu{
+		BACK,MENTIONED_IN_DESCRP,DEFAULT
+	}
+	
+	//PART MENU
+	enum EpartMenu{
+		BACK,ADD_PART,DISPLAY_ALL_PARTS,EDIT_PARTS_PRICE,DELETE_PART,DEFAULT
+	}
+	
 	public static EcustomerMenu customerMenu() {
 		System.out.println("0. Back ");
 		System.out.println("1. Add customer");
@@ -55,9 +90,7 @@ public class SubMenu {
 		}
 	}
 	
-	enum EvehicleMenu{
-		BACK,ADD_VEHICLE,DIPLAY_ALL_VEHICLES,DIPLAY_CUSTOMER_VEHICLES,EDIT,DELETE,DEFAULT
-	}
+	
 	public static EvehicleMenu vehicleMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. Add Vehicle ");
@@ -102,9 +135,7 @@ public class SubMenu {
 		}
 	}
 	
-	enum EserviceMenu{
-		BACK,SELECT_CUSTOMER_VEHICLE,PROCESS_REQ,PREPARED_DISPLAY_BILL,PAYMENT,DEFAULT
-	}
+	
 	
 	public static EserviceMenu serviceMenu() {
 		System.out.println("0. back");
@@ -149,9 +180,7 @@ public class SubMenu {
 	
 	//service request submenus created from here
 	
-	enum EprocessRequest{
-		BACK,NEW_SERVICE,EXISTING_SERVICE,MAINTENANCE,REPAIRING,OIL_DD,DEFAULT
-	}
+	
 	public static EprocessRequest processRequest() {
 		System.out.println("0. Back");
 		System.out.println("1. New Service");
@@ -193,9 +222,6 @@ public class SubMenu {
 		}
 	}
 	
-	enum EnewServiceMenu{
-		BACK,CAN_CREATE_NEW,DEFAULT
-	}
 	
 	public static EnewServiceMenu newServiceMenu() {
 		System.out.println("0. Back");
@@ -227,9 +253,7 @@ public class SubMenu {
 	
 	//existingService
 	
-	enum EexistingServiceMenu{
-		BACK,SELECT_EXISTING_SERVICE,DEFAULT
-	}
+	
 	public static EexistingServiceMenu existingServiceMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. If service is already created select the existing service");
@@ -260,9 +284,7 @@ public class SubMenu {
 	}
 	
 	// maintenance 
-	enum  EmaintenanceMenu{
-		BACK,MENTIONED_IN_DESCRP,DEFAULT
-	}
+	
 	
 	public static EmaintenanceMenu maintenanceMenu() {
 		System.out.println("0. Back");
@@ -317,9 +339,7 @@ public class SubMenu {
 	}
 	
 	//oil/addictive//add
-	enum EoilMenu{
-		BACK,MENTIONED_IN_DESCRP,DEFAULT
-	}
+	
 	public static EoilMenu OilMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. As per the requirements mentioned in above description.");
@@ -347,9 +367,7 @@ public class SubMenu {
 		}
 	}
 	
-	enum EpartMenu{
-		BACK,ADD_PART,DISPLAY_ALL_PARTS,EDIT_PARTS_PRICE,DELETE_PART,DEFAULT
-	}
+	
 	public static EpartMenu partMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. Add Part ");
