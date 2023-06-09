@@ -107,7 +107,7 @@ public class SubMenu {
 	}
 	
 	public static EserviceMenu serviceMenu() {
-		System.out.println("0 .back");
+		System.out.println("0. back");
 		System.out.println("1. Select Customer Vehicle");
 		System.out.println("2. Process Request");
 		System.out.println("3. Prepare and Display Bill");
@@ -128,7 +128,7 @@ public class SubMenu {
 
 				break;
 			case PROCESS_REQ:
-				System.out.println("2. Process Request");
+				processMain();
 
 				break;
 			case PREPARED_DISPLAY_BILL:

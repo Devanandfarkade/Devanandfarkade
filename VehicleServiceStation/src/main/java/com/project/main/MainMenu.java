@@ -17,8 +17,8 @@ public class MainMenu {
 		System.out.println("6. Given Date's Business");
 		System.out.print("Enter your choice = ");
 		int choice=new Scanner(System.in).nextInt();
-		if (choice <0 || choice >6) 
-			return EmainMenu.values()[6];	
+		if (choice <0 || choice >7) 
+			return EmainMenu.values()[7];	
 		else
 		return EmainMenu.values()[choice];
 		
