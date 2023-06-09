@@ -15,6 +15,7 @@ public class CustomerDao implements AutoCloseable{
 	 public CustomerDao() throws SQLException {
 		 this.connection=DBUtil.getConnection();
 	 }
+	 	 
 	 public void getAllCustomer(List<Customer>customerList) throws SQLException {
 		 	String sql="SELECT * FROM customer";
 		 	try(PreparedStatement getAllCustomer=this.connection.prepareStatement(sql)){
@@ -29,4 +30,21 @@ public class CustomerDao implements AutoCloseable{
 	public void close() throws SQLException {
 			this.connection.close();
 }
+	
+	
+	
+	
+	 
+	 public void addCustomer (Customer customer) throws SQLException {
+		 String sql="INSERT INTO customer (id,name,mobile,email,address) VALUES(?,?,?,?,?)";
+		 try (PreparedStatement addCustomer=this.connection.prepareStatement(sql)){
+			 addCustomer.setInt(1, customer.getId());
+			 addCustomer.setString(2, customer.getName());
+			 addCustomer.setString(3, customer.getMobile());
+			 addCustomer.setString(4, customer.getEmail());
+			 addCustomer.setString(5, customer.getAddress());
+			addCustomer.executeUpdate();
+			
+		} 
+	 }
 }

@@ -67,9 +67,7 @@ public class SubMenu {
 		while((choice =customerMenu())!=EcustomerMenu.BACK) {
 			switch (choice) {
 			case ADD_CUSTOMER:
-				System.out.println("1. Add customer");
-
-
+				CustomerService.addCustomer();			
 				break;
 			case DISPLAY_ALL_CUSTOMER:
 				CustomerService.getAllCustomer();
