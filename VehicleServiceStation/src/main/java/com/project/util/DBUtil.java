@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
 	private static final String DRIVER="com.mysql.cj.jdbc.Driver";
-	private static String URL="jdbc:mysql://localhost:3306:/vehicle_db";
+	private static String URL="jdbc:mysql://localhost:3306/vehicles_db";
 	private static String USERNAME="root";
 	private static String PASSWORD="root";
 	

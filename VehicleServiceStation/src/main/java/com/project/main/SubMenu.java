@@ -2,6 +2,10 @@ package com.project.main;
 
 import java.util.Scanner;
 
+import com.project.dao.CustomerDao;
+import com.project.entity.Customer;
+import com.project.services.CustomerService;
+
 public class SubMenu {
 
 	enum EcustomerMenu {
@@ -65,9 +69,10 @@ public class SubMenu {
 			case ADD_CUSTOMER:
 				System.out.println("1. Add customer");
 
+
 				break;
 			case DISPLAY_ALL_CUSTOMER:
-				System.out.println("2. Display All Customers");
+				CustomerService.getAllCustomer();
 
 				break;
 			case DISPLAY_SPECIFIC:
@@ -414,6 +419,7 @@ public class SubMenu {
 	public static int todayBusinessMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. list of all bills for todasy's business..!!");
+		
 		return new Scanner(System.in).nextInt();
 	}
 	public static void todayBusinessMain() {
