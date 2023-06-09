@@ -12,7 +12,7 @@ import com.project.entity.Customer;
 class getcustomerTest {
 
 	@Test
-	public void test() {
+	public void customer() {
 		List<Customer> customerList = new ArrayList<>();
 		try (CustomerDao customerDao = new CustomerDao()){
 			customerDao.getAllCustomer(customerList);
@@ -24,6 +24,7 @@ class getcustomerTest {
 			
 		}
 	}
+	
 	
 
 }
