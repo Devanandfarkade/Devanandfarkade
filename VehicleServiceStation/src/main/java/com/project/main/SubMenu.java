@@ -278,7 +278,7 @@ public class SubMenu {
 		while ((choice =maintenanceMenu())!=EmaintenanceMenu.BACK) {
 			switch (choice) {
 			case MENTIONED_IN_DESCRP:
-				System.out.println(" As per the requirements mentioned in above description.");
+				System.out.println("1.  As per the requirements mentioned in above description.");
 
 				break;
 
@@ -303,7 +303,7 @@ public class SubMenu {
 		while ((choice =repairingMenu())!=0) {
 			switch (choice) {
 			case 1:
-				System.out.println(" As per the requirements mentioned in above description.");
+				System.out.println("1.  As per the requirements mentioned in above description.");
 
 				break;
 
@@ -323,7 +323,7 @@ public class SubMenu {
 	public static EoilMenu OilMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. As per the requirements mentioned in above description.");
-		it choice =new Scanner(System.in).nextInt();
+		int choice =new Scanner(System.in).nextInt();
 		if(choice<0 || choice >2)
 			return EoilMenu.values()[2];
 		else
@@ -334,7 +334,7 @@ public class SubMenu {
 		while ((choice =repairingMenu())!=0) {
 			switch (choice) {
 			case 1:
-				System.out.println(" As per the requirements mentioned in above description.");
+				System.out.println("1.  As per the requirements mentioned in above description.");
 
 				break;
 
@@ -392,9 +392,10 @@ public class SubMenu {
 			}
 		}
 	}
+	
 	public static int todayBusinessMenu() {
 		System.out.println("0. Back");
-		System.out.println("list of all bills ");
+		System.out.println("1. list of all bills for todasy's business..!!");
 		return new Scanner(System.in).nextInt();
 	}
 	public static void todayBusinessMain() {
@@ -414,7 +415,7 @@ public class SubMenu {
 	}
 	public static int givenBusinessMenu() {
 		System.out.println("0. Back");
-		System.out.println("list of all bills ");
+		System.out.println("1. list of all bills from given business....!!! ");
 		return new Scanner(System.in).nextInt();
 	}
 	public static void givenBusinessMain() {
