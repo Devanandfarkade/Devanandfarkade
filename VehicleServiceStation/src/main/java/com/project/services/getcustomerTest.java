@@ -10,8 +10,9 @@ import org.junit.jupiter.api.Test;
 import com.project.dao.CustomerDao;
 import com.project.entity.Customer;
 
-class getcustomerTest {
 
+class getcustomerTest {
+	//test case 1 successful
 	@Test
 	public void getAllCustomers() {
 		List<Customer> customerList = new ArrayList<>();
@@ -25,7 +26,7 @@ class getcustomerTest {
 			
 		}
 	}
-	
+	//test case 2 successful
 	@Test
 	public void addCustomer() {
 		Scanner sc=new Scanner(System.in);

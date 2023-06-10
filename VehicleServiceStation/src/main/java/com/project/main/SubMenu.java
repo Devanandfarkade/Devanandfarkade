@@ -74,7 +74,7 @@ public class SubMenu {
 
 				break;
 			case DISPLAY_SPECIFIC:
-				System.out.println("3. Display Specific Customer Details ");
+				CustomerService.getSpecificCustomer();
 
 				break;
 			case EDIT:
