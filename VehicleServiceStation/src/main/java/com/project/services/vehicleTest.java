@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 class vehicleTest {
 
 	@Test
-	void test() {
-		VehicleService.addVehicle();
+	public void test() {
+//		VehicleService.addVehicle();
+		VehicleService.getSpecificVehicle();
 	}
+	
 
 }

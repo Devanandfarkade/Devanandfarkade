@@ -25,7 +25,7 @@ public class VehicleService {
 		Vehicle vehicle=new Vehicle(id,company,model);
 		try (VehicleDao vehicleDao = new VehicleDao()){
 			vehicleDao.addVehicle(vehicle);
-		}  catch (Exception e) {
+		}  catch (Exception e) {	
 			e.printStackTrace();
 		}
 	}
@@ -36,9 +36,22 @@ public class VehicleService {
 			for (Vehicle Vehicle : vehicleList) {
 				System.out.println(Vehicle);
 			}
-		} catch (Exception e) {
+		} catch (Exception e) {	
 			e.printStackTrace();
 			
+		}
+	}
+	public static void getSpecificVehicle() {
+		System.out.println("Enter Vehicle mobile Number = ");
+		String  id =new Scanner(System.in).next();
+		try (VehicleDao vehicleDao = new VehicleDao()){
+			Vehicle vehicle=vehicleDao.getSpecificVehicle(id);
+			if (vehicle != null) 
+				System.out.println(vehicle);
+			else 
+				System.out.println("Vehicle is not found ...!");
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

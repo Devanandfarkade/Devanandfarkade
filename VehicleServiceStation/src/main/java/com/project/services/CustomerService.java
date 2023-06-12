@@ -31,7 +31,8 @@ public class CustomerService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-	}			//display all Customers
+	}			
+	//display all Customers
 	public static void getAllCustomer() {
 		List<Customer> customerList = new ArrayList<>();
 		try (CustomerDao customerDao = new CustomerDao()){
