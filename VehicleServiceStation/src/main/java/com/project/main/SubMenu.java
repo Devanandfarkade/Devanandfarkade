@@ -78,12 +78,11 @@ public class SubMenu {
 
 				break;
 			case EDIT:
-				System.out.println("4. Edit Customer ");
+				CustomerService.updateCustomer();
 
 				break;
 			case DELETE:
-				System.out.println("5. Delete Customer");
-
+				CustomerService.deleteCustomer();
 				break;
 
 			default:
