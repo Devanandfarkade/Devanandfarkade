@@ -23,7 +23,7 @@ public class CustomerService {
 		String email=choice.next();
 		System.out.println("Enter Customer address here =");
 		String address=choice.next();
-		System.out.println("data inserted successfully....!!!");
+		System.out.println("Data inserted successfully....!!!");
 		
 		Customer customer=new Customer(id,name,mobile,email,address);
 		try (CustomerDao customerDao = new CustomerDao()){
