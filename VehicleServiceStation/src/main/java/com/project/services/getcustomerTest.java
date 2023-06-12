@@ -12,7 +12,7 @@ import com.project.entity.Customer;
 
 
 class getcustomerTest {
-	//test case 1 successful
+	//test case 1 successful get all customer 
 	@Test
 	public void getAllCustomers() {
 		List<Customer> customerList = new ArrayList<>();
@@ -26,7 +26,7 @@ class getcustomerTest {
 			
 		}
 	}
-	//test case 2 successful
+	//test case 2 successful addcustomer
 	@Test
 	public void addCustomer() {
 		Scanner sc=new Scanner(System.in);
@@ -49,6 +49,12 @@ class getcustomerTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	//test case 3 get specific cutomer 
+	@Test
+	public void getspecific() {
+	
+		CustomerService.getSpecificCustomer();
 	}
 	
 	
