@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.project.dao.CustomerDao;
 import com.project.dao.VehicleDao;
 import com.project.entity.Customer;
 import com.project.entity.Vehicle;
@@ -29,6 +28,7 @@ public class VehicleService {
 			e.printStackTrace();
 		}
 	}
+	//display all Vehicles
 	public static void getAllVehicle() {
 		List<Vehicle> vehicleList = new ArrayList<>();
 		try (VehicleDao vehicleDao = new VehicleDao()){
@@ -41,6 +41,7 @@ public class VehicleService {
 			
 		}
 	}
+	//display Specific Vehicle
 	public static void getSpecificVehicle() {
 		System.out.println("Enter Vehicle mobile Number = ");
 		String  id =new Scanner(System.in).next();
