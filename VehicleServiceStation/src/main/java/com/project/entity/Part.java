@@ -5,13 +5,13 @@ public class Part {
 	private int id;
 	private String name;
 	private String description ;
-	private String price;
+	private Double price;
 	
 	public Part() {
 	
 	}
 	
-	public Part(int id, String name, String description, String price) {
+	public Part(int id, String name, String description, Double price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,10 +37,10 @@ public class Part {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	
