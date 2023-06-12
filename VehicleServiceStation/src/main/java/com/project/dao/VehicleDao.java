@@ -44,13 +44,32 @@ public class VehicleDao implements AutoCloseable{
 				if (rs.next()) 
 					return new Vehicle(rs.getInt(1),rs.getString(2),rs.getString(3));
 					return null;
-			}}
+			}
+		}
+	 public int updateVehicle(int id, String company) throws SQLException {
+			String sql="UPDATE vehicle SET id =?  WHERE id=? ";
+			try (PreparedStatement updateVehicle =this.connection.prepareStatement(sql)){
+				updateVehicle.setInt(3, id);
+				updateVehicle.setString(1, company);
+				return updateVehicle.executeUpdate();
+			}
+		}
+	
+	 public int deleteVehicle(int id) throws SQLException {
+		 String sql="DELETE FROM vehicle WHERE id =? ";
+		 try (PreparedStatement deleteVehicle=this.connection.prepareStatement(sql)){
+			 deleteVehicle.setInt(1, id);
+			 return deleteVehicle.executeUpdate();
+		} 
+	 }
 	
 	@Override
 	public void close() throws Exception {
 		this.connection.close();
 		
 	}
+	
+	
 	
 	 
 	

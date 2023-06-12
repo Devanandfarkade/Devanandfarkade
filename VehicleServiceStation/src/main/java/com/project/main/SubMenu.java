@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.project.dao.CustomerDao;
 import com.project.entity.Customer;
 import com.project.services.CustomerService;
+import com.project.services.VehicleService;
 
 public class SubMenu {
 
@@ -113,22 +114,21 @@ public class SubMenu {
 		while ((choice =vehicleMenu())!=EvehicleMenu.BACK) {
 			switch (choice) {
 			case ADD_VEHICLE:
-				System.out.println("1. Add Vehicle ");
+				VehicleService.addVehicle();
 				break;
 			case DIPLAY_ALL_VEHICLES:
-				System.out.println("2. Display All Vehicles ");
+				VehicleService.getAllVehicle();
 				break;
 			case DIPLAY_CUSTOMER_VEHICLES:
 				System.out.println("3. Display Customer Vehicles ");
 		
 				break;
 			case EDIT:
-				System.out.println("4. Edit Vehicle ");
-
+				VehicleService.updateVehicle();
 				break;
 			case DELETE:
+//				VehicleService.deleteVehicle();
 				System.out.println("5. Delete Vehicle ");
-
 				break;
 			default:
 				System.out.println("Wrong choice ...:(");
