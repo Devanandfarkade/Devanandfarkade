@@ -57,4 +57,25 @@ public class CustomerService {
 			e.printStackTrace();
 		}
 	}
+	public static void updateCustomer() {
+		Scanner choice=new Scanner(System.in);
+			System.out.println("Enter Customer id for update = ");
+			int id=choice.nextInt();
+			System.out.println("Enter Customer mobile for update = ");
+			String mobile=choice.next();
+			System.out.println("Enter Customer address for update = ");
+			String address=choice.next();
+			try (CustomerDao customerDao =new CustomerDao()){
+				if (customerDao.updateCustomer(id,mobile,address)>0) {
+					System.out.println("Customer data updated successfully...");
+				}else
+				{
+					System.out.println("Customer Not  found .....");
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		
+	}
 }

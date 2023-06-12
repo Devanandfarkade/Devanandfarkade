@@ -47,7 +47,18 @@ public class CustomerDao implements AutoCloseable{
 				return new Customer(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
 				return null;
 			}
-	}	
+	}
+	
+	public int updateCustomer (int id,String mobile,String address) throws SQLException{
+		String sql="UPDATE customer SET mobile =? ,address=? WHERE id=? ";
+		try (PreparedStatement updateCustomer =this.connection.prepareStatement(sql)){
+			updateCustomer.setInt(3, id);
+			updateCustomer.setString(1, mobile);
+			updateCustomer.setString(2, address);
+			return updateCustomer.executeUpdate();
+		} 
+		
+	}
 	
 	@Override
 	public void close() throws SQLException {
