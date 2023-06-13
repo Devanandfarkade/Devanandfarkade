@@ -1,17 +1,17 @@
 package com.project.entity;
 
-public class Part {
+public class Parts {
 
 	private int id;
 	private String name;
 	private String description ;
 	private Double price;
 	
-	public Part() {
+	public Parts() {
 	
 	}
 	
-	public Part(int id, String name, String description, Double price) {
+	public Parts(int id, String name, String description, double price) {
 		super();
 		this.id = id;
 		this.name = name;

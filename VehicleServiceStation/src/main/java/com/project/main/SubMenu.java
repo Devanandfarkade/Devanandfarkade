@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.project.dao.CustomerDao;
 import com.project.entity.Customer;
-import com.project.entity.Part;
+import com.project.entity.Parts;
 import com.project.services.CustomerService;
 import com.project.services.PartService;
 import com.project.services.VehicleService;

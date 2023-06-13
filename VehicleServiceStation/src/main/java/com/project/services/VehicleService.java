@@ -68,6 +68,7 @@ public class VehicleService {
 
 	// display Specific Vehicle
 	public static void getSpecificVehicle() {
+		Customer customer=CustomerService.getSpecificCustomer();
 		System.out.println("Enter Vehicle mobile Number = ");
 		String id = new Scanner(System.in).next();
 		try (VehicleDao vehicleDao = new VehicleDao()) {
