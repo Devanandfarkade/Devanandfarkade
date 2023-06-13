@@ -10,8 +10,8 @@ class PartsTest {
 
 	@Test
 	public void addPart() {
-//	PartService.addParts();
-		PartService.getAllparts();
+	PartService.addParts();
+//		PartService.getAllparts();
 	}
 
 }

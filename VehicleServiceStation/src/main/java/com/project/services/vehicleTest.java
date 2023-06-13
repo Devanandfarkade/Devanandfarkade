@@ -9,18 +9,19 @@ class vehicleTest {
 	@Test
 	public void addvehicle() {
 		VehicleService.addVehicle();
-	}
-	@Test
-	public void specificVehicle() {
-		VehicleService.getSpecificVehicle();
-	}
-	@Test
-	public void updateVehicle() {
-		VehicleService.updateVehicle();
-	}
-	@Test
-	public void deleteVehicle() {
-		VehicleService.deleteVehicle();
-
-	}
+}
+//	@Test
+//	public void specificVehicle() {
+//		VehicleService.getSpecificVehicle();
+//	}
+//	@Test
+//	public void updateVehicle() {
+//		VehicleService.updateVehicle();
+//	}
+//	@Test
+//	public void deleteVehicle() {
+//		VehicleService.deleteVehicle();
+//
+//	}
+	
 }

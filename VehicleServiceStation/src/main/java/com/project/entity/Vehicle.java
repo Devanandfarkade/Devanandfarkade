@@ -17,6 +17,12 @@ public class Vehicle {
 		this.company = company;
 	}
 
+	public Vehicle(String company, String model) {
+		super();
+		this.model = model;
+		this.company = company;
+	}
+
 	public int getId() {
 		return id;
 	}

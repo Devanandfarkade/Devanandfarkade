@@ -1,6 +1,7 @@
 package com.project.services;
 
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -46,18 +47,17 @@ public class CustomerService {
 		}
 	}
 	//display Specific Customer
-	public static void getSpecificCustomer() {
+	public static Customer getSpecificCustomer() {
 		System.out.println("Enter Customer mobile Number = ");
 		String  mobile =new Scanner(System.in).next();
+		Customer customer=null;
 		try (CustomerDao customerDao = new CustomerDao()){
-			Customer customer=customerDao.getSpecificCustomer(mobile);
-			if (customer != null) 
-				System.out.println(customer);
-			else 
-				System.out.println("Customer is not found ...!");
+			customer=customerDao.getSpecificCustomer(mobile);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return customer;
 	}
 	public static void updateCustomer() {
 		Scanner choice=new Scanner(System.in);

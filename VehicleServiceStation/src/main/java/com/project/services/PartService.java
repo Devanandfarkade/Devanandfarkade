@@ -25,7 +25,7 @@ public class PartService {
 		System.out.println("Enert the price = ");
 		double price=choice.nextDouble();
 		
-		System.out.println("DAta Inserted in Part Successfully...!!!");
+		System.out.println("Data Inserted in Part Successfully...!!!");
 		
 		Part part=new Part(id,name,description, price);
 		try (PartDao partDao = new PartDao()){

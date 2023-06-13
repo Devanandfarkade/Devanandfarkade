@@ -12,7 +12,6 @@ import com.project.entity.Part;
 public class PartDao implements AutoCloseable{
 
 	private Connection connection;
-	
 	public void addParts(Part part) throws SQLException {
 		String sql="INSERT INTO PASRTS(id,name,description,price)VALUES(?,?,?,?)";
 		try (PreparedStatement addParts=this.connection.prepareStatement(sql)){
@@ -24,7 +23,7 @@ public class PartDao implements AutoCloseable{
 		}
 	}
 	public void getAllParts(List<Part> partList) throws SQLException {
-	 	String sql="SELECT * FROM parts";
+	 	String sql="SELECT * FROM parts ";
 		try(PreparedStatement getAllParts = this.connection.prepareStatement(sql)) {
 	 		ResultSet rs=getAllParts.executeQuery();
 			while(rs.next()) {
