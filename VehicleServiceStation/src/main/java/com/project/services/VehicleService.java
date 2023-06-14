@@ -104,11 +104,12 @@ public class VehicleService {
 	}
 
 	public static void deleteVehicle() {
-		System.out.print("enter Vehicle id to delete details of Vehicle = ");
-		int id = new Scanner(System.in).nextInt();
+		getSpecificVehicle();
+		System.out.print("enter Vehicle number to delete details of Vehicle = ");
+		String vehicle_number= new Scanner(System.in).next();
 		try {
 			VehicleDao vehicleDao = new VehicleDao();
-			if (vehicleDao.deleteVehicle(id) > 0) {
+			if (vehicleDao.deleteVehicle(vehicle_number) > 0) {
 				System.out.println("Vehicle data successfully deleted....!!!");
 			}
 

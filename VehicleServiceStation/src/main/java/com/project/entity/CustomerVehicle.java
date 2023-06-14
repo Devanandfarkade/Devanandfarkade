@@ -7,7 +7,7 @@ public class CustomerVehicle {
 	private int vehicle_id;
 	
 	public CustomerVehicle() {
-		super();
+		
 		
 	}
 	

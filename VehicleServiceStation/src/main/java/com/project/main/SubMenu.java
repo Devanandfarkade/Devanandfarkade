@@ -146,7 +146,7 @@ public class SubMenu {
 		System.out.println("1. Select Customer Vehicle");
 		System.out.println("2. Process Request");
 		System.out.println("3. Prepare and Display Bill");
-		System.out.println("4. Get Payment Form Customer");
+		System.out.println("4. Get Payment From Customer");
 		System.out.print("Enter your Choice =  ");
 		int choice = new Scanner(System.in).nextInt();
 		if (choice < 0 || choice > 5)
