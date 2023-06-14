@@ -17,7 +17,7 @@ public class PartService {
 		System.out.println("Enter name to add : ");
 		String name=new Scanner(System.in).next();
 		System.out.println("Enter description to add : ");
-		String description=new Scanner(System.in).next();
+		String description=new Scanner(System.in).nextLine();
 		System.out.println("Enter price to add : ");
 		Double price=new Scanner(System.in).nextDouble();
 		Parts parts=new Parts(id,name,description,price);
