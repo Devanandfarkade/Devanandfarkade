@@ -35,7 +35,9 @@ public class PartService {
 		List<Parts>partsList=new ArrayList<>();
 		try (PartsDao partsDao = new PartsDao()) {
 			partsDao.getAllParts(partsList);
-			
+			for (Parts parts : partsList) {
+				System.out.println(parts);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
