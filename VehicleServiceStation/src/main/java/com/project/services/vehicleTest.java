@@ -14,14 +14,13 @@ class vehicleTest {
 //	public void specificVehicle() {
 //		VehicleService.getSpecificVehicle();
 //	}
-	@Test
-	public void updateVehicle() {
-		VehicleService.updateVehicle();
-	}
 //	@Test
-//	public void deleteVehicle() {
-//		VehicleService.deleteVehicle();
-//
+//	public void updateVehicle() {
+//		VehicleService.updateVehicle();
 //	}
+	@Test
+	public void deleteVehicle() {
+		VehicleService.deleteVehicle();
+	}
 	
 }
