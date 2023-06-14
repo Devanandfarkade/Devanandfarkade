@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 class vehicleTest {
 
-//	@Test
-//	public void addvehicle() {
-//		VehicleService.addVehicle();
-//}
 	@Test
-	public void specificVehicle() {
-		VehicleService.getSpecificVehicle();
-	}
+	public void addvehicle() {
+		VehicleService.addVehicle();
+}
+//	@Test
+//	public void specificVehicle() {
+//		VehicleService.getSpecificVehicle();
+//	}
 //	@Test
 //	public void updateVehicle() {
 //		VehicleService.updateVehicle();
