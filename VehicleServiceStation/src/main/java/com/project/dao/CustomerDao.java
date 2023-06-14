@@ -49,8 +49,9 @@ public class CustomerDao implements AutoCloseable{
 				ResultSet  rs =getSpecificCustomer.executeQuery();
 				if (rs.next()) 
 					return new Customer(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
-					return null;
+				
 				}
+			return null;
 		}
 	public int updateCustomer (int id,String mobile,String address) throws SQLException{
 		String sql="UPDATE customer SET mobile =? ,address=? WHERE id=? ";
