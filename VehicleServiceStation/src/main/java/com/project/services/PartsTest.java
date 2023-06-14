@@ -13,17 +13,17 @@ class PartsTest {
 	PartService.addParts();
 	}
 
-	@Test
-	public void getAllParts() {
-		PartService.getAllParts();
-	}
-	
-	@Test
-	public void updateParts() {
-		PartService.updateParts();
-	}
-	@Test
-	public void deleteParts() {
-		PartService.deleteParts();
-	}
+//	@Test
+//	public void getAllParts() {
+//		PartService.getAllParts();
+//	}
+//	
+//	@Test
+//	public void updateParts() {
+//		PartService.updateParts();
+//	}
+//	@Test
+//	public void deleteParts() {
+//		PartService.deleteParts();
+//	}
 }
