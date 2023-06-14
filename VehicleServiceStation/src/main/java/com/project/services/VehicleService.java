@@ -10,6 +10,7 @@ import java.util.Scanner;
 import com.project.dao.VehicleDao;
 import com.project.entity.Customer;
 import com.project.entity.CustomerVehicle;
+import com.project.entity.SpecificCustomerVehicle;
 import com.project.entity.Vehicle;
 
 public class VehicleService {
@@ -37,12 +38,12 @@ public class VehicleService {
 					System.out.println("Vehicle Added ....!!!");
 
 				} else {
-					VehicleDao vehicleDao=new VehicleDao();
-					vehicleDao.customerVehicle(new CustomerVehicle(vehicleNo,customer.getId(),id));
-		    		
-		    		System.out.println("Vehicle  Added.....!!!! ");
-					
-					}
+					VehicleDao vehicleDao = new VehicleDao();
+					vehicleDao.customerVehicle(new CustomerVehicle(vehicleNo, customer.getId(), id));
+
+					System.out.println("Vehicle  Added.....!!!! ");
+
+				}
 			} else {
 				CustomerService.addCustomer();
 			}
@@ -51,7 +52,7 @@ public class VehicleService {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// display all Vehicles
 	public static void getAllVehicle() {
 		List<Vehicle> vehicleList = new ArrayList<>();
@@ -68,25 +69,26 @@ public class VehicleService {
 
 	// display Specific Vehicle
 	public static void getSpecificVehicle() {
-		Customer customer=CustomerService.getSpecificCustomer();
-		System.out.println("Enter Vehicle mobile Number = ");
-		String id = new Scanner(System.in).next();
+		Customer cust = CustomerService.getSpecificCustomer();
 		try (VehicleDao vehicleDao = new VehicleDao()) {
-			Vehicle vehicle = vehicleDao.getSpecificVehicle(id);
-			if (vehicle != null)
-				System.out.println(vehicle);
-			else
-				System.out.println("Vehicle is not found ...!");
+			List<SpecificCustomerVehicle> vehicles = vehicleDao.specificCustomerVehicles(cust.getId());
+			System.out.println("all vehicle for customer " + cust.getName() + " " + cust.getMobile());
+			for (SpecificCustomerVehicle v : vehicles) {
+				System.out.println(v);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public static void updateVehicle() {
 		Scanner choice = new Scanner(System.in);
-		System.out.print("Enter Vehicle id for update = ");
+		System.out.print("Enter Vehicle to edit vehicle details = ");
 		int id = choice.nextInt();
-		System.out.print("Enter Vehicle number for update = ");
+		System.out.print("Enter vehicle model = ");
 		String company = choice.next();
 
 		try (VehicleDao vehicleDao = new VehicleDao()) {

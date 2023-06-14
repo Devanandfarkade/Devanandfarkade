@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.project.entity.CustomerVehicle;
@@ -39,14 +40,21 @@ public class VehicleDao implements AutoCloseable{
 		return cnt;
 		
 	}
-	public void specificCustomerVehicles(int customer_id) throws SQLException {
+	public List<SpecificCustomerVehicle> specificCustomerVehicles(int cust_id) throws SQLException {
 		String sql="select * from customer_vehicles cv inner join vehicle v on cv.vehicle_id=v.id where customer_id =?";
 		PreparedStatement pst=this.connection.prepareStatement(sql);
-		pst.setInt(1, customer_id);
+		pst.setInt(1, cust_id);
 		ResultSet rs=pst.executeQuery();
+		List<SpecificCustomerVehicle> specificVehicles=new ArrayList<>();
+		
 		while(rs.next()) {
-			SpecificCustomerVehicle rcv =new SpecificCustomerVehicle(rs.getString("model"),rs.getString("company"),rs.getString("vehicle_number"),rs.getInt("customer_id"),rs.getInt("vehicle_id")); 
+			SpecificCustomerVehicle scv =new SpecificCustomerVehicle(rs.getString("vehicle_number"),
+					rs.getInt("customer_id"),rs.getInt("vehicle_id"),
+					rs.getString("company"),rs.getString("model")); 
+			
+			specificVehicles.add(scv);
 		}
+		return specificVehicles;
 	}
 
 	
@@ -60,15 +68,15 @@ public class VehicleDao implements AutoCloseable{
 					}
 		 	}
 	 }
-	 public Vehicle getSpecificVehicle(String id) throws SQLException {
+	 public Vehicle getSpecificVehicle(int id) throws SQLException {
 			String sql="SELECT * FROM  Vehicle WHERE id =? ";
 			try(PreparedStatement getSpecificVehicle =this.connection.prepareStatement(sql)) {
-				getSpecificVehicle.setString(1 ,id);
+				getSpecificVehicle.setInt(1 ,id);
 				ResultSet  rs =getSpecificVehicle.executeQuery();
 				if (rs.next()) 
-					return new Vehicle(rs.getInt(1),rs.getString(2),rs.getString(3));
-					return null;
-			}
+					return new Vehicle(rs.getInt("id"),rs.getString("company"),rs.getString("model"));
+					
+			}return null;
 		}
 	 public int updateVehicle(int id, String company) throws SQLException {
 			String sql="UPDATE vehicle SET id =?  WHERE id=? ";
