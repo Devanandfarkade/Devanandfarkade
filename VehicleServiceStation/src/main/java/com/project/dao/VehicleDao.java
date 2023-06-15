@@ -51,6 +51,8 @@ public class VehicleDao implements AutoCloseable{
 			SpecificCustomerVehicle scv =new SpecificCustomerVehicle(rs.getString("vehicle_number"),
 					rs.getInt("customer_id"),rs.getInt("vehicle_id"),
 					rs.getString("company"),rs.getString("model")); 
+//			SpecificCustomerVehicle rcv =new SpecificCustomerVehicle(rs.getString("model"),rs.getString("company"),rs.getString("vehicle_number"),rs.getInt("customer_id"),rs.getInt("vehicle_id")); 
+			
 			
 			specificVehicles.add(scv);
 		}

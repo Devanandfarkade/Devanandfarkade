@@ -37,10 +37,24 @@ class getcustomerTest {
 	}
 	
 	//test case 5 successful addcustomer
-	@Test
-	public void addCustomer() {
+//	@Test
+//	public void addCustomer() {
+//	
+//	CustomerService.addCustomer();
+//	}
 	
-	CustomerService.addCustomer();
+	@Test
+	public void testaddCustomer() {
+		CustomerDao customerDao;
+		try {
+			customerDao =new CustomerDao();
+			System.out.println(customerDao.addCustomer(new Customer( "akash","9898989898", "Akash@gmail.com", "Kolhapur")));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	

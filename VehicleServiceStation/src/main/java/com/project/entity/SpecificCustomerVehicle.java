@@ -14,6 +14,7 @@ public class SpecificCustomerVehicle {
 
 	public SpecificCustomerVehicle(String vehicle_number, int customer_id, int vehicle_id, String company,String model) {
 		super();
+		
 		this.vehicle_number = vehicle_number;
 		this.customer_id = customer_id;
 		this.vehicle_id = vehicle_id;
