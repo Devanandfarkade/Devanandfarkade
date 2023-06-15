@@ -1,8 +1,10 @@
-package com.project.services;
+package testCases;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import com.project.services.VehicleService;
 
 class vehicleTest {
 

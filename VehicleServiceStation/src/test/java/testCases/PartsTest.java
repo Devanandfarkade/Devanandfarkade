@@ -1,10 +1,11 @@
-package com.project.services;
+package testCases;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import com.project.entity.Parts;
+import com.project.services.PartService;
 
 class PartsTest {
 

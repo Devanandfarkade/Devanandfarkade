@@ -1,4 +1,4 @@
-package com.project.services;
+package testCases;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.project.dao.CustomerDao;
 import com.project.entity.Customer;
+import com.project.services.CustomerService;
 
 
 class getcustomerTest {
