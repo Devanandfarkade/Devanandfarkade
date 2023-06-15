@@ -10,6 +10,7 @@ import com.project.dao.PartsDao;
 import com.project.entity.Parts;
 
 public class PartsDaoTest {
+	//Test case for insert parts
 	@Test
 	public void testAddParts() {
 		PartsDao partsDao;
@@ -22,7 +23,7 @@ public class PartsDaoTest {
 			e.printStackTrace();
 		}
 	}
-
+//Test case for get all parts 
 	@Test
 	public void testGetAllParts() {
 		PartsDao partsDao;
@@ -36,7 +37,17 @@ public class PartsDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+	@Test
+	public void testUpdateParts() {
+		PartsDao partsDao;
+		try {
+			partsDao=new PartsDao();
+			partsDao.updateParts(7, 2350.25d);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
