@@ -61,6 +61,17 @@ public class CustomerDaoTest {
 			e.printStackTrace();
 		}
 	}
+	@Test
+	public void testDeleteCustomer() {
+		CustomerDao customerDao;
+		try {
+			customerDao=new CustomerDao();
+			customerDao.deleteCustomer(17);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	}
 	
