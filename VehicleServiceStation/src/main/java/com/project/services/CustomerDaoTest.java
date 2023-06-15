@@ -1,4 +1,4 @@
-package testCases;
+package com.project.services;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
