@@ -2,11 +2,13 @@ package com.project.main;
 
 import java.util.Scanner;
 
+
 import com.project.dao.CustomerDao;
 import com.project.entity.Customer;
 import com.project.entity.Parts;
 import com.project.services.CustomerService;
 import com.project.services.PartService;
+import com.project.services.ServiceReqService;
 import com.project.services.VehicleService;
 
 public class SubMenu {
@@ -160,11 +162,11 @@ public class SubMenu {
 		while ((choice = serviceMenu()) != EserviceMenu.BACK) {
 			switch (choice) {
 			case SELECT_CUSTOMER_VEHICLE:
-				System.out.println("1. Select Customer Vehicle");
-
+				ServiceReqService.selectCusomer();
 				break;
 			case PROCESS_REQ:
-				processMain();
+				
+			ServiceReqService.processRequest();
 
 				break;
 			case PREPARED_DISPLAY_BILL:

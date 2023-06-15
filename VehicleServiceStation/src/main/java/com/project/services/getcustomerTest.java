@@ -43,19 +43,7 @@ class getcustomerTest {
 //	CustomerService.addCustomer();
 //	}
 	
-	@Test
-	public void testaddCustomer() {
-		CustomerDao customerDao;
-		try {
-			customerDao =new CustomerDao();
-			System.out.println(customerDao.addCustomer(new Customer( "akash","9898989898", "Akash@gmail.com", "Kolhapur")));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
+	
 	
 	
 

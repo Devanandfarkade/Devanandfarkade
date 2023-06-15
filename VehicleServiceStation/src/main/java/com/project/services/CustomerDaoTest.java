@@ -11,6 +11,7 @@ import com.project.entity.Customer;
 
 public class CustomerDaoTest {
 
+	//test case for add customer 
 	@Test
 	public void testaddCustomer() {
 		CustomerDao customerDao;
@@ -21,9 +22,8 @@ public class CustomerDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
+	// test case for get all customers
 	@Test
 	public void testGetAllCustomer() {
 	CustomerDao customerDao;
@@ -37,6 +37,7 @@ public class CustomerDaoTest {
 		e.printStackTrace();
 		}
 	}
+	// test case for get specific customer
 	@Test
 	public void testGetspecificCustomer() {
 		CustomerDao customerDao;
@@ -48,6 +49,7 @@ public class CustomerDaoTest {
 			e.printStackTrace();
 		}
 	}
+	// test case for update customer details
 	@Test
 	public void testUpdateCustomer() {
 		CustomerDao customerDao;
@@ -58,8 +60,8 @@ public class CustomerDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
+	
 	}
 	
 
