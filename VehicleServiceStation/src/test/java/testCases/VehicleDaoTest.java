@@ -46,7 +46,17 @@ public class VehicleDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+	@Test
+	public void testUpdateVehicle() {
+		VehicleDao vehicleDao;
+		try {
+			vehicleDao=new VehicleDao();
+			vehicleDao.updateVehicle(11,"BMW");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
