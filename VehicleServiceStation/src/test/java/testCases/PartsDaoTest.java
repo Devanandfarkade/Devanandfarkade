@@ -43,7 +43,19 @@ public class PartsDaoTest {
 		PartsDao partsDao;
 		try {
 			partsDao=new PartsDao();
-			partsDao.updateParts(7, 2350.25d);
+			partsDao.updateParts(8, 50000d);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testDeleteParts() {
+		PartsDao partsDao;
+		try {
+			partsDao=new PartsDao();
+			partsDao.deleteParts(8);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
