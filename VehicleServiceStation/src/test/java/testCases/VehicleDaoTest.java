@@ -10,6 +10,7 @@ import com.project.dao.VehicleDao;
 import com.project.entity.Vehicle;
 
 public class VehicleDaoTest {
+	//test case for add Vehicles
 	@Test
 	public void testAdd() {
 		VehicleDao vehicleDao;
@@ -21,6 +22,7 @@ public class VehicleDaoTest {
 			e.printStackTrace();
 		}
 	}
+	// test case for get all vehicles
 	@Test
 	public void testGetAllVehicles() {
 		VehicleDao vehicleDao;
@@ -33,7 +35,17 @@ public class VehicleDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+	@Test
+	public void testGetspecificVehicles() {
+		VehicleDao vehicleDao;
+		try {
+			vehicleDao =new VehicleDao();
+			vehicleDao.getSpecificVehicle(13);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
