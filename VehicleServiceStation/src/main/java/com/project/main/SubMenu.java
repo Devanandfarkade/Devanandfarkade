@@ -167,7 +167,7 @@ public class SubMenu {
 				break;
 			case PROCESS_REQ:
 				if(vehicleNumber != null) {
-			ServiceReqService.processRequest();
+					processMain();
 			}else {
 				
 				System.out.println("please select vehcle fist..:(");

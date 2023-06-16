@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.project.entity.CustomerVehicle;
 import com.project.util.DBUtil;
 
 public class ServiceReqDao implements AutoCloseable{
@@ -19,8 +20,17 @@ private Connection connection;
 		pst.setString(1, vehicle_number);
 		pst.setInt(2, cutsomer_id);
 		pst.setInt(3, cutsomer_id);
-		
 	}
+	
+	
+//	public int newRequest(CustomerVehicle vehicle_number) throws SQLException{
+//		String sql="INSERT INTO  service_requests  (vehicle_number) VALUES (?)";
+//		PreparedStatement pst=this.connection.prepareStatement(sql);
+//		pst.setString(1, vehicle_number);
+//		return pst.executeUpdate();	
+//	}
+	
+	
 	@Override
 	public void close() throws Exception {
 		// TODO Auto-generated method stub

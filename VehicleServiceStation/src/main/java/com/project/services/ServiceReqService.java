@@ -13,11 +13,18 @@ public class ServiceReqService {
 	public static String selectCusomer() {
 
 		VehicleService.getSpecificVehicle();
-		System.out.println("Choose Vehicle_number  from the list or input detail of new vehicle ");
-		String  vehicleNumber = new Scanner(System.in).next();
-		return vehicleNumber;
-		
-		
+		Scanner choice = new Scanner(System.in);
+		System.out.print("Is it new vehicle...? if YES then press 0 Otherwise press 1 =");
+		int id = choice.nextInt();
+		if (id == 1) {
+				System.out.println("choose vehicle number from list OR input detail of vehicle =");
+				String vehicle_number=choice.next();
+				return vehicle_number;
+		}
+		else{
+		System.out.println("Please Enter 0 to go back ans 1st you have to enter Customer_vehiles ");
+		return null;
+	}
 //		if (vehicleNo == null) {
 //		
 //			System.out.print("Enter Customer ID = ");
@@ -49,8 +56,9 @@ public class ServiceReqService {
 //
 //		}
 	}
+
 	public static void processRequest() {
-		if(ServiceReqService.selectCusomer()==null ) {
+		if (ServiceReqService.selectCusomer() == null) {
 			System.out.println("first select customer");
 		}
 		SubMenu.processRequest();
