@@ -80,11 +80,11 @@ public class VehicleDao implements AutoCloseable{
 					
 			}return null;
 		}
-	 public int updateVehicle(int id, String company) throws SQLException {
-			String sql="UPDATE vehicle SET id =?  WHERE id=? ";
+	 public int updateVehicle(String old_vehicle_number,String new_vehhicle_number) throws SQLException {
+			String sql="UPDATE customer_vehicles SET vehicle_number  =?  WHERE vehicle_number=? ";
 			try (PreparedStatement updateVehicle =this.connection.prepareStatement(sql)){
-				updateVehicle.setInt(3, id);
-				updateVehicle.setString(1, company);
+				updateVehicle.setString(1, new_vehhicle_number);
+				updateVehicle.setString(2, old_vehicle_number);
 				return updateVehicle.executeUpdate();
 			}
 		}

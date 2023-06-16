@@ -52,7 +52,7 @@ public class VehicleDaoTest {
 		VehicleDao vehicleDao;
 		try {
 			vehicleDao=new VehicleDao();
-			vehicleDao.updateVehicle(11,"BMW");
+			vehicleDao.updateVehicle("MH12SJ4161","MH12SJ4166");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

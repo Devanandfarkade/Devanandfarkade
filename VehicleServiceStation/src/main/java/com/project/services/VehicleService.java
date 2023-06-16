@@ -86,21 +86,23 @@ public class VehicleService {
 
 	public static void updateVehicle() {
 		Scanner choice = new Scanner(System.in);
-		System.out.print("Enter Vehicle to edit vehicle details = ");
-		int id = choice.nextInt();
-		System.out.print("Enter vehicle model = ");
-		String company = choice.next();
+		System.out.print("Enter old_vehicleNumber = ");
+		String old_vehicle_number=choice.next();
+		try {
+			if (old_vehicle_number != null) {
+				VehicleDao vehicleDao=new VehicleDao();
+				System.out.println("Enter new vehicle number = ");
+				String new_vehicle_Number=choice.next();
+				System.out.println("Vehicle number updated successfully...");
 
-		try (VehicleDao vehicleDao = new VehicleDao()) {
-			if (vehicleDao.updateVehicle(id, company) > 0) {
-				System.out.println("Vehicle data updated successfully...");
-			} else {
-				System.out.println("Vehicle Not  found .....");
+			System.out.println(vehicleDao.updateVehicle(old_vehicle_number, new_vehicle_Number));	
 			}
-
-		} catch (Exception e) {// SQLException needed
+		} catch (SQLException e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
+		
+
 	}
 
 	public static void deleteVehicle() {
