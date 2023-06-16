@@ -14,8 +14,8 @@ public class ServiceReqService {
 
 		VehicleService.getSpecificVehicle();
 		System.out.println("Choose Vehicle_number  from the list or input detail of new vehicle ");
-		String  vehicleNo = new Scanner(System.in).next();
-		return vehicleNo;
+		String  vehicleNumber = new Scanner(System.in).next();
+		return vehicleNumber;
 		
 		
 //		if (vehicleNo == null) {
