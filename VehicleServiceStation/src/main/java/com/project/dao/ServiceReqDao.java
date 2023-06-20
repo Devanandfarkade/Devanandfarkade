@@ -23,13 +23,6 @@ private Connection connection;
 	}
 	
 	
-//	public int newRequest(CustomerVehicle vehicle_number) throws SQLException{
-//		String sql="INSERT INTO  service_requests  (vehicle_number) VALUES (?)";
-//		PreparedStatement pst=this.connection.prepareStatement(sql);
-//		pst.setString(1, vehicle_number);
-//		return pst.executeUpdate();	
-//	}
-	
 	
 	@Override
 	public void close() throws Exception {

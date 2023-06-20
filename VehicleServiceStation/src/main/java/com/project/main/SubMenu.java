@@ -1,5 +1,6 @@
 package com.project.main;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 
@@ -9,6 +10,7 @@ import com.project.entity.Parts;
 import com.project.services.CustomerService;
 import com.project.services.PartService;
 import com.project.services.ServiceReqService;
+import com.project.services.ServiceSerivice;
 import com.project.services.VehicleService;
 
 public class SubMenu {
@@ -167,7 +169,7 @@ public class SubMenu {
 				break;
 			case PROCESS_REQ:
 				if(vehicleNumber != null) {
-					processMain();
+					processMain(vehicleNumber);
 			}else {
 				
 				System.out.println("please select vehcle fist..:(");
@@ -207,12 +209,18 @@ public class SubMenu {
 
 	}
 
-	public static void processMain() {
+	public static void processMain(String vehicleNumber) {
 		EprocessRequest choice;
 		while ((choice = processRequest()) != EprocessRequest.BACK) {
 			switch (choice) {
 			case NEW_SERVICE:
-				newServiceMain();
+				
+				try {
+					SubMenu.newServiceMain(vehicleNumber);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
 				break;
 			case EXISTING_SERVICE:
 				existingServiceMain();
@@ -235,7 +243,7 @@ public class SubMenu {
 
 	public static EnewServiceMenu newServiceMenu() {
 		System.out.println("0. Back");
-		System.out.println("1. Service center can create a new service for the selected customer vehicle");
+		System.out.println("1. creating new service ");
 		int choice = new Scanner(System.in).nextInt();
 		if (choice < 0 || choice > 2)
 			return EnewServiceMenu.values()[2];
@@ -246,12 +254,14 @@ public class SubMenu {
 
 	// newService
 
-	public static void newServiceMain() {
+	public static void newServiceMain(String vehicleNumber) throws SQLException {
 		EnewServiceMenu choice;
 		while ((choice = newServiceMenu()) != EnewServiceMenu.BACK) {
+			System.out.println("here ");
+			System.out.println(choice);
 			switch (choice) {
 			case CAN_CREATE_NEW:
-				System.out.println("1. Service center can create a new service for the selected customer vehicle");
+				ServiceSerivice.newService(vehicleNumber);
 				break;
 
 			default:

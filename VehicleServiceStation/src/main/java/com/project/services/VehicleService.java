@@ -68,19 +68,19 @@ public class VehicleService {
 	}
 
 	// display Specific Vehicle
-	public static void getSpecificVehicle() {
+	public static List<SpecificCustomerVehicle> getSpecificVehicle() {
 		Customer cust = CustomerService.getSpecificCustomer();
-		try (VehicleDao vehicleDao = new VehicleDao()) {
-			List<SpecificCustomerVehicle> vehicles = vehicleDao.specificCustomerVehicles(cust.getId());
+		 List<SpecificCustomerVehicle> vehicles = null;
+		 try (VehicleDao vehicleDao = new VehicleDao()) {
+			 vehicles = vehicleDao.specificCustomerVehicles(cust.getId());
 			System.out.println("all vehicle for customer " + cust.getName() + " " + cust.getMobile());
-			for (SpecificCustomerVehicle v : vehicles) {
-				System.out.println(v);
-			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return vehicles;
 
 	}
 
