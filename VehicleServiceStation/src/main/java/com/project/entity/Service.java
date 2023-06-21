@@ -1,57 +1,69 @@
 package com.project.entity;
 
-import java.sql.Date;
+import java.io.Serializable;
 
-public class Service {
+public abstract class Service implements Serializable {
 
-	private int id;
-	private String vehicle_number;
-	private Date request_date ;
-	private Double bill_amount;
+	private static final long serialVersionUID=1l;
+	protected int id;
+	protected String type;
+	protected double total_cost;
+	protected String remark;
+	public Service(String type) {
+		super();
+		this.type=type;
+	}
+	
 	public Service() {
-		
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public Service(int id, String vehicle_number) {
+	
+	public Service(int id, String type, double total_cost, String remark) {
 		super();
 		this.id = id;
-		this.vehicle_number = vehicle_number;
-		
+		this.type = type;
+		this.total_cost = total_cost;
+		this.remark = remark;
 	}
-	public Service(int id, String vehicle_number, Date request_date, Double bill_amount) {
-		super();
-		this.id = id;
-		this.vehicle_number = vehicle_number;
-		this.request_date = request_date;
-		this.bill_amount = bill_amount;
-	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getVehicle_number() {
-		return vehicle_number;
+
+	public String getType() {
+		return type;
 	}
-	public void setVehicle_number(String vehicle_number) {
-		this.vehicle_number = vehicle_number;
+
+	public void setType(String type) {
+		this.type = type;
 	}
-	public Date getRequest_date() {
-		return request_date;
+
+	public double getTotal_cost() {
+		return total_cost;
 	}
-	public void setRequest_date(Date request_date) {
-		this.request_date = request_date;
+
+	public void setTotal_cost(double total_cost) {
+		this.total_cost = total_cost;
 	}
-	public Double getBill_amount() {
-		return bill_amount;
+
+	public String getRemark() {
+		return remark;
 	}
-	public void setBill_amount(Double bill_amount) {
-		this.bill_amount = bill_amount;
+
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
-	@Override
-	public String toString() {
-		return "Service [id=" + id + ", vehicle_number=" + vehicle_number + ", request_date=" + request_date
-				+ ", bill_amount=" + bill_amount + "]";
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
+
+	public abstract void acceptService();
+	public abstract void calculateTotalCost();
 	
 }

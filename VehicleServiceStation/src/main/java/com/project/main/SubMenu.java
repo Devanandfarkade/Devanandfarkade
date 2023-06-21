@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.project.dao.CustomerDao;
 import com.project.entity.Customer;
 import com.project.entity.Parts;
+import com.project.entity.ServiceRequest;
 import com.project.services.CustomerService;
 import com.project.services.PartService;
 import com.project.services.ServiceReqService;
@@ -34,7 +35,7 @@ public class SubMenu {
 	// SubMenus from process
 	// new service menu
 	enum EnewServiceMenu {
-		BACK, CAN_CREATE_NEW, DEFAULT
+		BACK, CREATE_NEW_SERVICE, DEFAULT
 	}
 
 	// existing service menu
@@ -211,16 +212,16 @@ public class SubMenu {
 
 	public static void processMain(String vehicleNumber) {
 		EprocessRequest choice;
+		ServiceRequest serviceRequest=null;
 		while ((choice = processRequest()) != EprocessRequest.BACK) {
 			switch (choice) {
 			case NEW_SERVICE:
 				
 				try {
-					SubMenu.newServiceMain(vehicleNumber);
+				serviceRequest=	ServiceSerivice.newService(vehicleNumber);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-				
 				break;
 			case EXISTING_SERVICE:
 				existingServiceMain();
@@ -240,7 +241,6 @@ public class SubMenu {
 			}
 		}
 	}
-
 	public static EnewServiceMenu newServiceMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. creating new service ");
@@ -251,28 +251,25 @@ public class SubMenu {
 			return EnewServiceMenu.values()[choice];
 
 	}
-
-	// newService
-
-	public static void newServiceMain(String vehicleNumber) throws SQLException {
-		EnewServiceMenu choice;
-		while ((choice = newServiceMenu()) != EnewServiceMenu.BACK) {
-			System.out.println("here ");
-			System.out.println(choice);
-			switch (choice) {
-			case CAN_CREATE_NEW:
-				ServiceSerivice.newService(vehicleNumber);
-				break;
-
-			default:
-				System.out.println("Wrong choice ...:(");
-				break;
-			}
-		}
-	}
-
+//	 newService
+//	public static void newServiceMain(String vehicleNumber) throws SQLException {
+//		EnewServiceMenu choice;
+//		
+//		while ((choice = newServiceMenu()) != EnewServiceMenu.BACK) {
+//			System.out.println("here ");
+//			System.out.println(choice);
+//			switch (choice) {
+//			case CREATE_NEW_SERVICE:
+//				ServiceSerivice.newService(vehicleNumber);
+//				break;
+//
+//			default:
+//				System.out.println("Wrong choice ...:(");
+//				break;
+//			}
+//		}
+//	}
 	// existingService
-
 	public static EexistingServiceMenu existingServiceMenu() {
 		System.out.println("0. Back");
 		System.out.println("1. If service is already created select the existing service");
@@ -281,7 +278,6 @@ public class SubMenu {
 			return EexistingServiceMenu.values()[2];
 		else
 			return EexistingServiceMenu.values()[choice];
-
 	}
 
 	public static void existingServiceMain() {
@@ -290,7 +286,6 @@ public class SubMenu {
 			switch (choice) {
 			case SELECT_EXISTING_SERVICE:
 				System.out.println("1. If service is already created select the existing service");
-
 				break;
 
 			default:
