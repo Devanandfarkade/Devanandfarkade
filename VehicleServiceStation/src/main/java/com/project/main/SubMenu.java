@@ -1,6 +1,7 @@
 package com.project.main;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -224,6 +225,12 @@ public class SubMenu {
 				}
 				break;
 			case EXISTING_SERVICE:
+				try {
+					List<ServiceRequest> list =ServiceSerivice.fetchTodayServiceList();
+				} catch (SQLException e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
 				existingServiceMain();
 				break;
 			case MAINTENANCE:

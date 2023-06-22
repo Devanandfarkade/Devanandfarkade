@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ServiceRequest  implements Serializable{
 
@@ -19,7 +20,15 @@ public class ServiceRequest  implements Serializable{
 	{
 		this.serviceList=new ArrayList<Service>();
 	}
+	public List<Service>getServiceList(){
+		return serviceList;
+	}
 	
+
+	public void setServiceList(List<Service>serviceList) {
+		this.serviceList=serviceList;
+		
+	}
 	
 	public ServiceRequest(int id, String vehicle_number) {
 		super();
@@ -63,5 +72,31 @@ public class ServiceRequest  implements Serializable{
 		return "Service [id=" + id + ", vehicle_number=" + vehicle_number + ", request_date=" + request_date
 				+ ", bill_amount=" + bill_amount + "]";
 	}
+
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return Objects.hash(id);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if(this== obj)
+			return true;
+		
+		if(obj == null)
+			return false;
+		if(getClass() != obj.getClass())
+			return false;
+		ServiceRequest other=(ServiceRequest)obj;
+		return super.equals(obj);
+	}
+
+
+	
+
+
 	
 }

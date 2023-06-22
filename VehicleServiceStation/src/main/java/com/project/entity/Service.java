@@ -5,18 +5,17 @@ import java.io.Serializable;
 public abstract class Service implements Serializable {
 
 	private static final long serialVersionUID=1l;
-	protected int id;
-	protected String type;
-	protected double total_cost;
-	protected String remark;
+	private int id;
+	private String type;
+	private double total_cost;
+	private String remark;
 	public Service(String type) {
 		super();
 		this.type=type;
 	}
 	
 	public Service() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	
 	public Service(int id, String type, double total_cost, String remark) {

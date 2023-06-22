@@ -7,6 +7,7 @@ public class Maintainance extends Service{
 
 	private static final long serialVersionUID=1L;
 	private double labourCharges;
+	private double parts_cost;
 	private List<ServiceParts>partList;
 	public Maintainance() {
 		super("Maintainance");
@@ -17,7 +18,6 @@ public class Maintainance extends Service{
 	
 	public Maintainance(int id, String type, double total_cost, String remark) {
 		super(id, type, total_cost, remark);
-		// TODO Auto-generated constructor stub
 	}
 	
 	
@@ -44,6 +44,10 @@ public class Maintainance extends Service{
 	public Maintainance(String type) {
 		super(type);
 		// TODO Auto-generated constructor stub
+	}
+
+	public Maintainance(int id, String type, double labour_charges, double total_cost, String remark, int service_request_id) {
+		
 	}
 
 	@Override
