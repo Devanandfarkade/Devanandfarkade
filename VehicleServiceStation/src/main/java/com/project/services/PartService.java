@@ -31,7 +31,7 @@ public class PartService {
 			e.printStackTrace();
 		}
 	}
-	public static void getAllParts() {
+	public static List<Parts> getAllParts() {
 		List<Parts>partsList=new ArrayList<>();
 		try (PartsDao partsDao = new PartsDao()) {
 			partsDao.getAllParts(partsList);
@@ -41,6 +41,7 @@ public class PartService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
+	return partsList;
 	}
 	public static void updateParts() {
 		System.out.println("Enter Parts id to edit price: ");
@@ -70,4 +71,17 @@ public class PartService {
 			e.printStackTrace();
 		}
 	}
+//	public static List<Parts> getSpecificParts() {
+//		Parts p=PartService.getSpecificParts();
+//		List<Parts> parts=null;
+//		try(PartsDao partsDao =new PartsDao()) {
+//			parts=partsDao.specificParts(p.getId());
+//			System.out.println("All Parts "+ p.get(2));
+//
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		
+//		return null;
+//	}
 }

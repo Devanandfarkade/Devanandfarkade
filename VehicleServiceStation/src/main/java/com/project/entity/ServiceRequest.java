@@ -13,17 +13,15 @@ public class ServiceRequest  implements Serializable{
 	private Date request_date ;
 	private Double bill_amount;
 	private List<Service>serviceList;
-	public ServiceRequest() {
-		
-	}
-	//initializer block
 	{
 		this.serviceList=new ArrayList<Service>();
 	}
 	public List<Service>getServiceList(){
 		return serviceList;
 	}
-	
+	public ServiceRequest() {
+		
+	}
 
 	public void setServiceList(List<Service>serviceList) {
 		this.serviceList=serviceList;
@@ -42,6 +40,9 @@ public class ServiceRequest  implements Serializable{
 		this.vehicle_number = vehicle_number;
 		this.request_date = request_date;
 		this.bill_amount = bill_amount;
+	}
+	public ServiceRequest(int id) {
+		this.id=id;
 	}
 	public int getId() {
 		return id;
@@ -76,7 +77,6 @@ public class ServiceRequest  implements Serializable{
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
 		return Objects.hash(id);
 	}
 
@@ -91,7 +91,7 @@ public class ServiceRequest  implements Serializable{
 		if(getClass() != obj.getClass())
 			return false;
 		ServiceRequest other=(ServiceRequest)obj;
-		return super.equals(obj);
+		return id== other.id;
 	}
 
 

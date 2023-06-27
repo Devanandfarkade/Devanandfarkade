@@ -4,11 +4,13 @@ import java.io.Serializable;
 
 public abstract class Service implements Serializable {
 
-	private static final long serialVersionUID=1l;
-	private int id;
-	private String type;
-	private double total_cost;
-	private String remark;
+	
+	private static final long serialVersionUID=1L;
+	protected int id;
+	protected String type;
+	protected double total_cost;
+	protected String remark;
+	protected int Service_request_id;
 	public Service(String type) {
 		super();
 		this.type=type;
@@ -24,6 +26,19 @@ public abstract class Service implements Serializable {
 		this.type = type;
 		this.total_cost = total_cost;
 		this.remark = remark;
+	}
+
+	public void setService_request_id(int service_request_id) {
+		this.Service_request_id = service_request_id;
+	}
+
+	public Service(int id, String type, double total_cost, String remark, int service_request_id) {
+		super();
+		this.id = id;
+		this.type = type;
+		this.total_cost = total_cost;
+		this.remark = remark;
+		Service_request_id = service_request_id;
 	}
 
 	public int getId() {
@@ -64,5 +79,17 @@ public abstract class Service implements Serializable {
 
 	public abstract void acceptService();
 	public abstract void calculateTotalCost();
+
+	public int getService_request_id() {
+		// TODO Auto-generated method stub
+		return this.Service_request_id;
+	}
+
+	@Override
+	public String toString() {
+		return "Service [id=" + id + ", type=" + type + ", total_cost=" + total_cost + ", remark=" + remark
+				+ ", Service_request_id=" + Service_request_id + "]";
+	}
+	
 	
 }

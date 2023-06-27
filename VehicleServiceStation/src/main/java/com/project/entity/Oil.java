@@ -1,5 +1,7 @@
 package com.project.entity;
 
+import java.util.Scanner;
+
 public class Oil extends Service{
 
 	private double oil_cost;
@@ -28,13 +30,15 @@ public class Oil extends Service{
 
 	@Override
 	public void acceptService() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Enter Oil cost = ");
+		oil_cost= new Scanner(System.in).nextDouble();
+			calculateTotalCost();
 	}
 
 	@Override
 	public void calculateTotalCost() {
-		// TODO Auto-generated method stub
-		
+
+		double total_cost=this.getTotal_cost()+this.oil_cost;
+		this .setTotal_cost(total_cost);
 	}
 }

@@ -19,6 +19,10 @@ public class Parts {
 		this.price = price;
 	}
 	
+	public Parts(int part_id) {
+		this.id=part_id;
+	}
+
 	public int getId() {
 		return id;
 	}

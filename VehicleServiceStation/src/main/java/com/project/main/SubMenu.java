@@ -30,7 +30,7 @@ public class SubMenu {
 	}
 
 	enum EprocessRequest {
-		BACK, NEW_SERVICE, EXISTING_SERVICE, MAINTENANCE, REPAIRING, OIL_DD, DEFAULT
+		BACK, NEW_SERVICE, EXISTING_SERVICE, MAINTENANCE, REPAIRING, OIL_ADD, DEFAULT
 	}
 
 	// SubMenus from process
@@ -46,7 +46,7 @@ public class SubMenu {
 
 	// maintenance Menu
 	enum EmaintenanceMenu {
-		BACK, MENTIONED_IN_DESCRP, DEFAULT
+		BACK, MAINTENANCE, DEFAULT
 	}
 
 	// Oil/Additive Change/Add
@@ -72,9 +72,7 @@ public class SubMenu {
 			return EcustomerMenu.values()[6];
 		else
 			return EcustomerMenu.values()[choice];
-
 	}
-
 	public static void customerMain() {
 		EcustomerMenu choice;
 		while ((choice = customerMenu()) != EcustomerMenu.BACK) {
@@ -88,11 +86,9 @@ public class SubMenu {
 				break;
 			case DISPLAY_SPECIFIC:
 				System.out.println(CustomerService.getSpecificCustomer());
-
 				break;
 			case EDIT:
 				CustomerService.updateCustomer();
-
 				break;
 			case DELETE:
 				CustomerService.deleteCustomer();
@@ -217,7 +213,6 @@ public class SubMenu {
 		while ((choice = processRequest()) != EprocessRequest.BACK) {
 			switch (choice) {
 			case NEW_SERVICE:
-				
 				try {
 				serviceRequest=	ServiceSerivice.newService(vehicleNumber);
 				} catch (SQLException e) {
@@ -227,20 +222,48 @@ public class SubMenu {
 			case EXISTING_SERVICE:
 				try {
 					List<ServiceRequest> list =ServiceSerivice.fetchTodayServiceList();
+					System.out.println(list);
+					System.out.println("Enter id for service :");
+					int id=new Scanner(System.in).nextInt();
+					serviceRequest=list.get(list.indexOf(new ServiceRequest(id)));
+					System.out.println(serviceRequest);
+					ServiceSerivice.serviceProvided(serviceRequest);
 				} catch (SQLException e) {
-					// TODO: handle exception
 					e.printStackTrace();
 				}
-				existingServiceMain();
+				//existingServiceMain();
 				break;
 			case MAINTENANCE:
-				maintenanceMain();
+				System.out.println(serviceRequest);
+				if(serviceRequest != null) {
+				try {
+					ServiceSerivice.doMaintainance(serviceRequest);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				}else {
+					System.out.println("First Select Service - ");
+				}
 				break;
 			case REPAIRING:
-				repairingMain();
+				if(serviceRequest != null) {
+					try {
+						ServiceSerivice.doRepairing(serviceRequest);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					}
 				break;
-			case OIL_DD:
-				OilMain();
+			case OIL_ADD:
+				if(serviceRequest != null) {
+					try {
+						ServiceSerivice.doOilChange(serviceRequest);
+						}
+					 catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
 				break;
 			default:
 				System.out.println("Wrong choice ...:(");
@@ -258,24 +281,7 @@ public class SubMenu {
 			return EnewServiceMenu.values()[choice];
 
 	}
-//	 newService
-//	public static void newServiceMain(String vehicleNumber) throws SQLException {
-//		EnewServiceMenu choice;
-//		
-//		while ((choice = newServiceMenu()) != EnewServiceMenu.BACK) {
-//			System.out.println("here ");
-//			System.out.println(choice);
-//			switch (choice) {
-//			case CREATE_NEW_SERVICE:
-//				ServiceSerivice.newService(vehicleNumber);
-//				break;
-//
-//			default:
-//				System.out.println("Wrong choice ...:(");
-//				break;
-//			}
-//		}
-//	}
+
 	// existingService
 	public static EexistingServiceMenu existingServiceMenu() {
 		System.out.println("0. Back");
@@ -320,9 +326,9 @@ public class SubMenu {
 		EmaintenanceMenu choice;
 		while ((choice = maintenanceMenu()) != EmaintenanceMenu.BACK) {
 			switch (choice) {
-			case MENTIONED_IN_DESCRP:
-				System.out.println("1.  As per the requirements mentioned in above description.");
-
+			case MAINTENANCE:
+//				ServiceSerivice.doMaintainance(null);
+				
 				break;
 
 			default:

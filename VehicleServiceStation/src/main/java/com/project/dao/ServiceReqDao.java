@@ -22,8 +22,6 @@ private Connection connection;
 		pst.setInt(3, cutsomer_id);
 	}
 	
-	
-	
 	@Override
 	public void close() throws Exception {
 		// TODO Auto-generated method stub
