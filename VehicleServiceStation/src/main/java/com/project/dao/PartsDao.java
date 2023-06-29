@@ -42,7 +42,6 @@ public class PartsDao implements AutoCloseable{
 		try(PreparedStatement updateParts=this.connection.prepareStatement(sql)){
 			updateParts.setInt(2, id);
 			updateParts.setDouble(1, price);
-	
 			return updateParts.executeUpdate();
 		}
 	}

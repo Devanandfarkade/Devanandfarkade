@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 
 import com.project.dao.CustomerDao;
+import com.project.entity.Bill;
 import com.project.entity.Customer;
 import com.project.entity.Parts;
 import com.project.entity.ServiceRequest;
@@ -128,7 +129,8 @@ public class SubMenu {
 				VehicleService.getAllVehicle();
 				break;
 			case DIPLAY_CUSTOMER_VEHICLES:
-				VehicleService.getSpecificVehicle();
+				Customer cust = CustomerService.getSpecificCustomer();
+				VehicleService.getSpecificVehicles(cust);
 				break;
 			case EDIT:
 				VehicleService.updateVehicle();
@@ -174,8 +176,8 @@ public class SubMenu {
 			}
 				break;
 			case PREPARED_DISPLAY_BILL:
-				System.out.println("3. Prepare and Display Bill");
-
+				Bill bill=new Bill();
+				bill.preparedBill();
 				break;
 			case PAYMENT:
 				System.out.println("4. Get Payment Form Customer");
@@ -257,7 +259,7 @@ public class SubMenu {
 			case OIL_ADD:
 				if(serviceRequest != null) {
 					try {
-						ServiceSerivice.doOilChange(serviceRequest);
+						ServiceSerivice.doOil(serviceRequest);
 						}
 					 catch (Exception e) {
 						e.printStackTrace();

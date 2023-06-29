@@ -1,6 +1,6 @@
 package com.project.entity;
 
-public class SpecificCustomerVehicle {
+public class SpecificCustomerVehicles {
 	
 	private String vehicle_number;
 	private int customer_id;
@@ -8,11 +8,11 @@ public class SpecificCustomerVehicle {
 	private String company;
 	private String model;
 	
-	public SpecificCustomerVehicle(String string, String string2, String string3, int i, int j) {
+	public SpecificCustomerVehicles(String string, String string2, String string3, int i, int j) {
 		
 	}
 
-	public SpecificCustomerVehicle(String vehicle_number, int customer_id, int vehicle_id, String company,String model) {
+	public SpecificCustomerVehicles(String vehicle_number, int customer_id, int vehicle_id, String company,String model) {
 		super();
 		
 		this.vehicle_number = vehicle_number;

@@ -22,9 +22,21 @@ private Connection connection;
 		pst.setInt(3, cutsomer_id);
 	}
 	
+	
 	@Override
 	public void close() throws Exception {
 		// TODO Auto-generated method stub
+		
+	}
+	public int addBill(double bill, int id) throws SQLException {
+		String sql="UPDATE service_requests SET bill_amount =? where id=?";
+		try(PreparedStatement pst=this.connection.prepareStatement(sql)) {
+			pst.setDouble(1, bill);
+			pst.setInt(2, id);
+			pst.executeUpdate();
+			return id; 
+		}
+		
 		
 	}
 	

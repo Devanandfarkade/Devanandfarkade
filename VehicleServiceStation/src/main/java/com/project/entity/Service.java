@@ -4,22 +4,22 @@ import java.io.Serializable;
 
 public abstract class Service implements Serializable {
 
-	
-	private static final long serialVersionUID=1L;
-	protected int id;
-	protected String type;
-	protected double total_cost;
-	protected String remark;
-	protected int Service_request_id;
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String type;
+	private double total_cost;
+	private String remark;
+	private int Service_request_id;
+
 	public Service(String type) {
 		super();
-		this.type=type;
+		this.type = type;
 	}
-	
+
 	public Service() {
-	
+
 	}
-	
+
 	public Service(int id, String type, double total_cost, String remark) {
 		super();
 		this.id = id;
@@ -39,6 +39,10 @@ public abstract class Service implements Serializable {
 		this.total_cost = total_cost;
 		this.remark = remark;
 		Service_request_id = service_request_id;
+	}
+
+	public Service(int id, String type, double labour_charges, double total_cost, String remark,
+			int service_request_id2) {
 	}
 
 	public int getId() {
@@ -78,6 +82,7 @@ public abstract class Service implements Serializable {
 	}
 
 	public abstract void acceptService();
+
 	public abstract void calculateTotalCost();
 
 	public int getService_request_id() {
@@ -90,6 +95,5 @@ public abstract class Service implements Serializable {
 		return "Service [id=" + id + ", type=" + type + ", total_cost=" + total_cost + ", remark=" + remark
 				+ ", Service_request_id=" + Service_request_id + "]";
 	}
-	
-	
+
 }

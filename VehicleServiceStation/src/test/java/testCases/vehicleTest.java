@@ -14,7 +14,7 @@ class vehicleTest {
 }
 	@Test
 	public void specificVehicle() {
-		VehicleService.getSpecificVehicle();
+		VehicleService.getSpecificVehicles(null);
 	}
 	@Test
 	public void updateVehicle() {

@@ -55,7 +55,7 @@ public class CustomerDaoTest {
 		CustomerDao customerDao;
 		try {
 			customerDao =new CustomerDao();
-			customerDao.updateCustomer(17, "7020680295", "PIMPALGAON");
+			customerDao.updateCustomer(17, "7020680295", "PIMPALGAON","vishal");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
