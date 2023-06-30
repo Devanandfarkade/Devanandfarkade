@@ -2,8 +2,10 @@ package com.project.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.project.entity.Customer;
 import com.project.entity.CustomerVehicle;
 import com.project.util.DBUtil;
 
@@ -35,9 +37,20 @@ private Connection connection;
 			pst.setInt(2, id);
 			pst.executeUpdate();
 			return id; 
-		}
-		
-		
+		} 
+//		public Customer customerDetails(String vehicle_number)throws SQLException {
+//			String sql="SELECT ID ,NAME ,MOBILE,ADDRESS FROM CUSTOMER INNER JOIN CUSTOMER_VEHICLE ON CUSTOMER.ID=CUSTOMER_VEHICLE.CUTOMER_ ID WHERE VEHICLE_number=?";
+//			try (PreparedStatement pst=this.connection.prepareStatement(sql)) {
+//				pst.setString(1, vehicle_number);
+//				pst.executeQuery();
+//				ResultSet rs=pst.executeQuery();
+//				if(rs.next()) {
+//					
+//				}
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//			}
+//		}
 	}
 	
 	
