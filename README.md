@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on Full Stack Web Applications using React.js & Node.js  <br>👯 I’m looking to collaborate on scalable web projects & innovative startup ideas  <br>🤝 I’m looking for help with advanced system design & performance optimization  <br>🌱 I’m currently learning Spring Boot, system architecture & advanced backend concepts  <br>💬 Ask me about React.js, Node.js, Java, REST APIs & PostgreSQL  <br>⚡ Fun fact: I love turning real-world https://devanandfarkade.github.io/Portfolio/problems into efficient digital solutions 🚀  
+🔭 I’m currently working on Full Stack Web Applications using React.js & Node.js  <br>👯 I’m looking to collaborate on scalable web projects & innovative startup ideas  <br>🤝 I’m looking for help with advanced system design & performance optimization  <br>🌱 I’m currently learning Spring Boot, system architecture & advanced backend concepts  <br>💬 Ask me about React.js, Node.js, Java, REST APIs & PostgreSQL  <br>⚡ Fun fact: I love turning real-worlds into efficient digital solutions 🚀  
 
 
 ## 🌐 Socials:
